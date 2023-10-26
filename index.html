@@ -1,16 +1,30 @@
-function trickOrTreat() {
-    var tricks = ["Why don't ghosts like rain? Because it dampens their spirits!", "Why did the ghost go into the bar? For the Boos.", "Why don't skeletons fight each other? They don't have the guts."];
-    var treats = ["Happy Halloween! Have a spooktacular night!", "Wishing you a fun and spooky Halloween filled with lots of yummy treats!", "Eat, drink and be scary!"];
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halloween Trick or Treat</title>
+</head>
+<body>
+    <h1>Welcome to the Halloween Trick or Treat Game!</h1>
+    <img id="halloweenImage" src="" alt="Halloween Image" style="display: none;">
+    <button onclick="trickOrTreat()">Click the door if you dare!</button>
+    <p id="message"></p>
 
-    var choice = Math.random() < 0.5 ? tricks : treats;
-    var message = choice[Math.floor(Math.random() * choice.length)];
+    <script>
+        function trickOrTreat() {
+            var tricks = ["Why don't ghosts like rain? Because it dampens their spirits!", "Why did the ghost go into the bar? For the Boos.", "Why don't skeletons fight each other? They don't have the guts."];
+            var treats = ["Happy Halloween! Have a spooktacular night!", "Wishing you a fun and spooky Halloween filled with lots of yummy treats!", "Eat, drink and be scary!"];
 
-    document.getElementById("message").innerHTML = message;
+            var choice = Math.random() < 0.5 ? tricks : treats;
+            var message = choice[Math.floor(Math.random() * choice.length)];
+            document.getElementById("message").innerHTML = message;
 
-    var images = ["./pumpkin1.jpg", "./pumpkin2.jpg", "./pumpkin3.jpg", "./pumpkin4.jpg", "./pumpkin5.jpg", "./pumpkin6.jpg"];
-    var image = images[Math.floor(Math.random() * images.length)];
+            var images = ["./pumpkin1.jpg", "./pumpkin2.jpg", "./pumpkin3.jpg", "./pumpkin4.jpg", "./pumpkin5.jpg", "./pumpkin6.jpg"];
+            var image = images[Math.floor(Math.random() * images.length)];
 
-    var imgElement = document.getElementById("halloweenImage");
-    imgElement.src = image;
-    imgElement.style.display = "block";
-}
+            var imgElement = document.getElementById("halloweenImage");
+            imgElement.src = image;
+            imgElement.style.display = "block";
+        }
+    </script>
+</body>
+</html>
